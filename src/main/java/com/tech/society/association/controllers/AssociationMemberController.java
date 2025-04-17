@@ -15,6 +15,11 @@ public class AssociationMemberController {
     @Autowired
     private AssociationMemberService service;
 
+    @GetMapping("/health")
+    public ResponseEntity<?> health() {
+        return ResponseEntity.ok("Hello, welcome to Society Association Service..!!");
+    }
+
     @PostMapping
     public ResponseEntity<AssociationMember> create(@RequestBody AssociationMember member) {
         return ResponseEntity.ok(service.save(member));
